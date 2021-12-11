@@ -18,6 +18,10 @@ public class Day7Puzzle1 implements PuzzleSolver<Integer> {
     public Integer solve(BufferedReader br) throws IOException {
         List<Integer> positions = Arrays.stream(br.readLine().split("\s*,\s*")).map(Integer::parseInt).toList();
 
+        return solve(positions);
+    }
+
+    public int solve(List<Integer> positions) {
         IntSummaryStatistics s = positions.stream().mapToInt(i -> i).summaryStatistics();
 
         return IntStream.rangeClosed(s.getMin(), s.getMax())

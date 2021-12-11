@@ -3,7 +3,6 @@ package days.day5;
 import util.PuzzleSolver;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiConsumer;
@@ -16,7 +15,7 @@ public class Day5Puzzle2 implements PuzzleSolver<Integer> {
     }
 
     @Override
-    public Integer solve(BufferedReader br) throws IOException {
+    public Integer solve(BufferedReader br) {
         List<Line> lines = br.lines().map(Line::fromString).collect(Collectors.toList());
 
         int xMax = lines.stream().flatMapToInt(line -> IntStream.of(line.fromX, line.toX)).max().orElseThrow();
